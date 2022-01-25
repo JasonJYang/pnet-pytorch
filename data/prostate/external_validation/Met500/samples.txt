@@ -1,0 +1,500 @@
+1 MO_1001 48 M Caucasian Colon Adenocarcinoma COAD Liver COLO Colon 11 Y
+2 MO_1002 49 F Caucasian Cutaneous Melanoma SKCM Skin SKCM Skin 26 Y
+3 MO_1005 44 F Caucasian Solitary Fibrous Tumor SFT Liver SARC Unknown 108 Y
+4 MO_1007 62 F Caucasian Extrahepatic Cholangiocarcinoma EHCH Liver CHOL Gall Bladder 6 Y
+5 MO_1008 47 M Caucasian Prostate Adenocarcinoma PRAD Dura PRAD Prostate 41 Y
+6 MO_1011 69 M Caucasian Dedifferentiated Liposarcoma DDLS Shoulder SARC Retroperitoneum 124 Y
+7 MO_1012 71 M Caucasian Prostate Neuroendocrine Carcinoma PRNE Subq Nodule PRAD Prostate 91 Y
+8 MO_1013 55 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 59 Y
+9 MO_1014 67 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 54 Y
+10 MO_1015 75 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 122 Y
+11 MO_1016 80 M Caucasian Bladder Urothelial Carcinoma BLCA Lymph Node BLCA Bladder 90 Y
+12 MO_1017 66 M East Asian Thymic Neuroendocrine Tumor TNET Lymph Node THYM Thymus 26 Y
+13 MO_1020 63 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 30 Y
+14 MO_1022 50 M East Asian Extrahepatic Cholangiocarcinoma EHCH Liver CHOL Bile Duct 13 Y
+15 MO_1023 54 M Caucasian Extraskeletal Myxoid Chondrosarcoma EMCHS Lung SARC Thigh 36 Y
+16 MO_1024 57 M Caucasian Osteoblastic Osteosarcoma OSOS Chest Wall SARC Arm 54 Y
+17 MO_1025 31 F African Am. Embryonal Rhabdomyosarcoma ERMS Subq Abdom. Mass SARC Abdomen 55 Y
+18 MO_1026 75 M Caucasian Undifferentiated Pleomorphic Sarcoma MFH Forearm Mass SARC Knee 8 Y
+19 MO_1027 62 F Caucasian Extrahepatic Cholangiocarcinoma EHCH Liver CHOL Gall Bladder 3 Y
+20 MO_1028 18 F Caucasian Adrenocortical Carcinoma ACC Retroperitoneum ACC Adrenal 19 Y
+21 MO_1030 78 F Caucasian Breast Invasive Lobular Carcinoma ILC Pancreas BRCA Breast 252 Y
+22 MO_1031 41 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 155 Y
+23 MO_1032 35 F African Am. Breast Invasive Ductal Carcinoma IDC Breast BRCA Breast 44 Y
+24 MO_1033 54 F Caucasian Anal Squamous Cell Carcinoma ANSC Liver COLO Anal 27 Y Papillary Thyroid
+25 MO_1034 63 F Caucasian Atypical Lung Carcinoid ALUCA Lung LUNG Lung 12 Y
+26 MO_1035 67 M Caucasian Gastrointestinal Stromal Tumor GIST Retroperitoneum STAD Stomach 127 Y
+27 MO_1036 34 F Caucasian Extrahepatic Cholangiocarcinoma EHCH Liver CHOL Bile Duct 1 N
+28 MO_1037 28 F Caucasian Desmoplastic Small-Round-Cell Tumor DSRCT Liver PAAD Pancreas 41 Y
+29 MO_1038 39 M Caucasian Cutaneous Melanoma SKCM Lung SKCM Neck 2 Y
+30 MO_1039 61 M Caucasian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Bile Duct 1 N
+31 MO_1040 62 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 210 Y
+32 MO_1042 26 F Caucasian Adrenocortical Carcinoma ACC Liver ACC Adrenal 34 Y
+33 MO_1043 48 F Caucasian Salivary Clear Cell Carcinoma Lymph Node SECR Salivary Gland 10 Y
+34 MO_1044 37 F Caucasian Adenoid Cystic Carcinoma ACYC Lung SECR Oral Mass 146 Y
+35 MO_1045 60 M Caucasian Pancreatic Adenocarcinoma PAAD Lymph Node PAAD Pancreas 8 Y
+36 MO_1046 54 M Caucasian Penile Squamous Cell Carcinoma PSCC Bone HNSC Penis 6 Y
+37 MO_1047 40 M Caucasian Ewing Sarcoma ES Gluteus Muscle SARC Hip 25 Y
+38 MO_1048 63 M Caucasian Colon Adenocarcinoma COAD Lymph Node COLO Colon 312 Y
+39 MO_1049 72 M Caucasian Bladder Squamous Cell Carcinoma BLSC Lymph Node BLCA Bladder 202 Y
+40 MO_1050 62 F Caucasian Serous Ovarian Cancer SOC Liver OV Ovary 38 Y
+41 MO_1051 31 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 85 Y
+42 MO_1052 78 M Caucasian Anaplastic Thyroid Cancer THAP Thyroid THCA Thyroid 12 Y
+43 MO_1053 49 F Caucasian Adrenocortical Carcinoma ACC Adrenal ACC Adrenal 13 Y
+44 MO_1055 68 M Caucasian Cutaneous Squamous Cell Carcinoma CSCC Liver HNSC Scalp 34 Y
+45 MO_1058 62 M Caucasian Follicular Dendritic Cell Sarcoma FDCS Neck SARC Shoulder 33 Y
+46 MO_1059 49 F Caucasian Pancreatic Neuroendocrine Tumor PANET Liver PAAD Pancreas 33 Y
+47 MO_1060 62 F Caucasian High-Grade Serous Ovarian Cancer HGSOC Lymph Node OV Ovary 26 Y
+48 MO_1061 39 F Caucasian Thymoma THYM Lung THYM Thymus 61 Y
+49 MO_1062 33 F Hispanic Ameloblastoma Lung SECR Mandible 86 Y
+50 MO_1063 76 M Caucasian Renal Clear Cell Carcinoma CCRCC Vertebra KDNY Kidney 22 Y
+51 MO_1064 52 M Caucasian Adenoid Cystic Carcinoma ACYC Lung SECR Parotid Gland 132 Y
+52 MO_1065 46 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 74 Y
+53 MO_1066 63 M Caucasian Prostate Adenocarcinoma PRAD Neck PRAD Prostate 62 Y
+54 MO_1067 73 M Caucasian Esophageal Adenocarcinoma ESCA Esophagus ESCA Esophagus 7 Y Superficial Urothelial Ca
+55 MO_1068 65 F Caucasian Breast Invasive Lobular Carcinoma ILC Lymph Node BRCA Breast 346 Y
+56 MO_1069 62 F Caucasian Breast Invasive Lobular Carcinoma ILC Lymph Node BRCA Breast 219 Y
+57 MO_1070 70 M Caucasian Cutaneous Melanoma SKCM Lymph Node SKCM Skin (Arm) 16 Y
+58 MO_1072 69 M Caucasian Penile Squamous Cell Carcinoma PSCC Buttock HNSC Penis 81 Y Basal Cell Carcinoma
+59 MO_1073 36 M Caucasian Rectal Adenocarcinoma READ Colon COLO Rectum 0 N
+60 MO_1074 69 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 129 Y
+61 MO_1075 22 M Caucasian Poorly Differentiated Carcinoma, NOS PDC Lung MISC Unknown 6 Y
+62 MO_1076 63 M Caucasian Dermatofibrosarcoma Protuberans DFSP Lung SARC Skin (Neck) 29 Y
+63 MO_1077 65 F Caucasian Poorly Differentiated Thyroid Cancer THPD Thyroid THCA Thyroid 1 N
+64 MO_1079 53 M Caucasian Sarcomatoid Carcinoma Mandible MISC Mandible 0 N
+65 MO_1080 69 F Caucasian Anaplastic Thyroid Cancer THAP Thyroid THCA Thyroid 3 Y Breast Ductal Carcinoma
+66 MO_1084 77 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 162 Y
+67 MO_1085 49 M Caucasian Gastrointestinal Stromal Tumor GIST Liver STAD Small Bowel 230 Y
+68 MO_1086 63 F Caucasian Undifferentiated Malignant Neoplasm UDMN Lung MISC Unknown 11 Y
+69 MO_1087 61 M Caucasian Colon Adenocarcinoma COAD Liver COLO Colon 17 Y
+70 MO_1088 66 M Caucasian Extraskeletal Myxoid Chondrosarcoma EMCHS Lung SARC Deltoid 18 Y
+71 MO_1089 58 F Caucasian Solid Pseudopapillary Neoplasm of the Pancreas SPN Periaortic Mass PAAD Pancreas 3 Y
+72 MO_1090 52 F Caucasian Breast Invasive Ductal Carcinoma IDC Chest Wall BRCA Breast 227 Y Hodgkin Lymphoma
+73 MO_1091 58 F Caucasian Small Cell Bladder Cancer SCBC Abdom. Wall BLCA Bladder 3 Y
+74 MO_1092 62 F Caucasian Mucinous Adenocarcinoma Lymph Node MISC Unknown 60 Y
+75 MO_1093 55 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 1 Y
+76 MO_1094 67 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 10 Y
+77 MO_1095 72 M Caucasian Prostate Adenocarcinoma PRAD Thoracic Epidural PRAD Prostate 14 Y
+78 MO_1096 65 M African Am. Prostate Adenocarcinoma PRAD Bone PRAD Prostate 95 Y
+79 MO_1097 57 F Caucasian Bladder Urothelial Carcinoma BLCA Liver BLCA Bladder 9 Y
+80 MO_1098 46 M Caucasian Colon Adenocarcinoma COAD Lung COLO Colon 28 Y
+81 MO_1099 45 F Caucasian Bladder Squamous Cell Carcinoma BLSC Liver BLCA Bladder 6 Y
+82 MO_1100 48 M Caucasian Leiomyosarcoma LMS Paraspinal Mass SARC Kidney 11 Y
+83 MO_1102 34 M Caucasian Thymic Squamous Carcinoma Liver THYM Thymus 16 Y
+84 MO_1106 72 M Caucasian Head and Neck Mucosal Melanoma HNMUCM Cheek SKCM Sinus 48 Y
+85 MO_1107 46 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 88 Y
+86 MO_1108 75 F Caucasian Lung Adenocarcinoma LUAD Lymph Node LUNG Lung 64 Y
+87 MO_1109 60 M Caucasian Merkel Cell Carcinoma MCC Chest Wall MISC Skin 21 Y
+88 MO_1111 54 F Caucasian Lung Adenocarcinoma LUAD Lymph Node LUNG Lung 17 Y
+89 MO_1112 55 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 32 Y
+90 MO_1114 62 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 91 Y
+91 MO_1116 54 M Caucasian Pancreatobiliary Ampullary Carcinoma PAMPCA Liver CHOL Ampulla of Vater 44 Y
+92 MO_1117 53 F Caucasian Hepatocellular Carcinoma HCC Liver HCC Liver 70 Y
+93 MO_1118 73 M Caucasian Prostate Neuroendocrine Carcinoma PRNE Liver PRAD Prostate 137 Y
+94 MO_1119 54 M Caucasian Poorly Differentiated Non-Small Cell Lung Cancer NSCLCPD Brain LUNG Lung 0 N
+95 MO_1123 77 F Caucasian Mucinous Cystic Neoplasm MCN Lung PAAD Pancreas 9 Y Basal Cell Carcinoma
+96 MO_1124 66 M Caucasian Prostate Adenocarcinoma PRAD Bladder PRAD Prostate 285 Y
+97 MO_1125 72 M Caucasian Poorly Differentiated Non-Small Cell Lung Cancer NSCLCPD Lymph Node LUNG Lung 48 Y
+98 MO_1126 55 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 12 Y
+99 MO_1128 71 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 136 Y
+100 MO_1129 44 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 141 Y
+101 MO_1130 56 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 42 Y
+102 MO_1131 70 M Caucasian Cutaneous Melanoma SKCM Lymph Node SKCM Skin 16 Y
+103 MO_1132 60 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 5 Y
+104 MO_1133 49 F Caucasian Synovial Sarcoma SYNS Epidural SARC Unknown 51 Y
+105 MO_1135 47 M Caucasian Bladder Urothelial Carcinoma BLCA Rectus Muscle BLCA Bladder 12 Y
+106 MO_1136 35 F Caucasian Fibrolamellar Carcinoma FLC Chest Wall HCC Liver 36 Y
+107 MO_1137 66 F Caucasian Uterine Leiomyosarcoma ULMS Lung SARC Uterus 104 Y
+108 MO_1138 60 F Caucasian High-Grade Serous Ovarian Cancer HGSOC Pelvis OV Fallopian Tube 0 N
+109 MO_1139 61 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 106 Y
+110 MO_1140 72 F African Am. Gastrointestinal Stromal Tumor GIST Paraspinal Mass STAD Unknown 2 Y
+111 MO_1141 56 M Caucasian Squamous Cell Carcinoma, NOS SCCNOS Lung HNSC Unknown 20 Y
+112 MO_1142 72 F Caucasian Clear Cell Carcinoma Lung Tongue 161 Y Clinoidal Meningioma
+113 MO_1146 72 M Caucasian Cutaneous Melanoma SKCM Subq Nodule SKCM Unknown 10 Y Breast Ductal Carcinoma
+114 MO_1147 62 F Caucasian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Unknown 1 N
+115 MO_1148 64 M Caucasian Leiomyosarcoma LMS Chest Wall SARC Penis 121 Y
+116 MO_1149 24 F African Am. Alveolar Soft Part Sarcoma ASPS Lung SARC Psoas Muscle 74 Y
+117 MO_1150 54 M Caucasian Lung Adenocarcinoma LUAD Lymph Node LUNG Lung 39 Y
+118 MO_1152 43 M Caucasian Extrahepatic Cholangiocarcinoma EHCH Liver CHOL Gall Bladder 0 N
+119 MO_1153 70 M Caucasian Bladder Urothelial Carcinoma BLCA Liver BLCA Bladder 42 Y
+120 MO_1155 40 M Caucasian Adenoid Cystic Carcinoma ACYC Subq Nodule SECR Oropharynx 13 Y
+121 MO_1157 49 F Caucasian Uterine Leiomyosarcoma ULMS Retroperitoneum SARC Uterus 17 Y
+122 MO_1158 64 F Caucasian High-Grade Serous Ovarian Cancer HGSOC Pelvic Mass OV Ovary 1 N
+123 MO_1159 54 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 24 Y
+124 MO_1160 66 M Caucasian Merkel Cell Carcinoma MCC Liver MISC Skin 15 Y
+125 MO_1161 65 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 16 Y
+126 MO_1162 62 M Caucasian Prostate Adenocarcinoma PRAD Peritoneum PRAD Prostate 106 Y
+127 MO_1163 52 M Caucasian Poorly Differentiated Non-Small Cell Lung Cancer NSCLCPD Liver LUNG Lung 20 Y
+128 MO_1164 51 F Caucasian Renal Clear Cell Carcinoma CCRCC Brain KDNY Kidney 18 Y
+129 MO_1165 32 F Caucasian Uterine Leiomyosarcoma ULMS Breast SARC Uterus 41 Y
+130 MO_1166 78 M Caucasian Bladder Urothelial Carcinoma BLCA Bone BLCA Bladder 1 N
+131 MO_1167 60 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 214 Y Basal Cell Carcinoma
+132 MO_1168 50 M Caucasian Leiomyosarcoma LMS Liver SARC Unknown 27 Y Bilateral Retinoblastoma
+133 MO_1170 44 M Caucasian Extrahepatic Cholangiocarcinoma EHCH Peritoneum CHOL Perihilar 18 Y
+134 MO_1171 42 M Caucasian Teratoma with Malignant Transformation TMT Lymph Node TGCT Testicle 6 Y
+135 MO_1172 55 F Caucasian Pancreatic Adenocarcinoma PAAD Lung PAAD Pancreas 45 Y
+136 MO_1175 69 M Caucasian Adenocarcinoma, NOS ADNOS Liver MISC Unknown 26 Y
+137 MO_1176 56 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 1 N
+138 MO_1177 62 M Caucasian Lung Squamous Cell Carcinoma LUSC Pleura LUNG Lung 7 Y
+139 MO_1178 61 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 52 Y
+140 MO_1179 75 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 61 Y
+141 MO_1180 58 M Caucasian Extraskeletal Myxoid Chondrosarcoma EMCHS Gluteus Muscle SARC Thigh 16 Y
+142 MO_1181 62 F Caucasian Uterine Leiomyosarcoma ULMS Abdomen SARC Uterus 176 Y
+143 MO_1182 52 F African Am. Leiomyosarcoma LMS Gluteal Mass SARC Unknown 44 Y
+144 MO_1183 69 F Caucasian Cutaneous Melanoma SKCM Subq Nodule (Arm) SKCM Skin (Lip) 43 Y
+145 MO_1184 72 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 47 Y
+146 MO_1185 58 F Caucasian Breast Invasive Lobular Carcinoma ILC Peritoneal Fluid BRCA Breast 195 Y
+147 MO_1187 64 F Caucasian Oral Cavity Squamous Cell Carcinoma OCSC Liver HNSC Oral 17 Y
+148 MO_1188 62 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 191 Y
+149 MO_1189 67 F Caucasian Poorly Differentiated Non-Small Cell Lung Cancer NSCLCPD Lymph Node LUNG Lung 4 Y
+150 MO_1190 66 F Caucasian Breast Invasive Lobular Carcinoma ILC Bladder BRCA Breast 106 Y
+151 MO_1192 62 M African Am. Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 73 Y
+152 MO_1193 28 F Caucasian Low-Grade Serous Ovarian Cancer LGSOC Lung OV Ovary 4 Y
+153 MO_1194 60 F Caucasian Lung Adenocarcinoma LUAD Chest Wall LUNG Lung 39 Y
+154 MO_1195 56 F Caucasian Adenocarcinoma, NOS ADNOS Lymph Node BRCA Breast 0 N
+155 MO_1196 34 M Caucasian Gastrointestinal Stromal Tumor GIST Liver STAD Stomach 13 Y
+156 MO_1197 59 M Caucasian Squamous Cell Carcinoma, NOS SCCNOS Lymph Node HNSC Unknown 9 Y
+157 MO_1198 64 M Caucasian Bladder Urothelial Carcinoma BLCA Liver BLCA Bladder 15 Y
+158 MO_1200 67 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 131 Y
+159 MO_1201 62 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 12 Y
+160 MO_1202 70 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 24 Y
+161 MO_1203 47 F Caucasian Intrahepatic Cholangiocarcinoma IHCH Subcut. Abdomen CHOL Liver 8 Y
+162 MO_1204 46 F Caucasian Urachal Adenocarcinoma UA Subcut. Periumbilical BLCA Urachus 64 Y
+163 MO_1206 54 F Caucasian Lung Squamous Cell Carcinoma LUSC Liver LUNG Lung 14 Y
+164 MO_1208 61 M Caucasian Undifferentiated Pleomorphic Sarcoma/Malignant F MFH Acetabulum SARC Thigh 20 Y
+165 MO_1209 61 M Caucasian Clear Cell Carcinoma of the Lung CCLC Lung Nodule LUNG Lung 51 Y
+166 MO_1210 19 F Caucasian Hepatocellular Carcinoma HCC Peritoneum HCC Liver 9 Y
+167 MO_1211 23 M African Am. Desmoplastic Small-Round-Cell Tumor DSRCT Liver SARC Pelvis 16 Y
+168 MO_1213 43 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 8 Y
+169 MO_1214 78 M Caucasian Renal Cell Carcinoma RCC Bone KDNY Kidney 0 N Prostate Carcinoma
+170 MO_1215 65 M Caucasian Prostate Neuroendocrine Carcinoma PRNE Perirectal Mass PRAD Prostate 133 Y
+171 MO_1217 67 M Caucasian Undifferentiated Malignant Neoplasm UDMN Lymph Node MISC Unknown 2 N
+172 MO_1219 67 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 20 Y
+173 MO_1220 26 M Caucasian Desmoplastic Small-Round-Cell Tumor DSRCT Lymph Node SARC Pleura 46 Y
+174 MO_1221 59 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 102 Y
+175 MO_1222 46 M Caucasian Extraskeletal Myxoid Chondrosarcoma EMCHS Thigh SARC Thigh 149 Y
+176 MO_1223 62 F Caucasian Squamous Cell Carcinoma, NOS SCCNOS Lymph Node HNSC Unknown 2 Y
+177 MO_1224 69 M Caucasian Urethral Urothelial Carcinoma UCU Lymph Node BLCA Urethra 24 Y
+178 MO_1226 48 F Caucasian Angiosarcoma ANGS Chest Wall Nodule SARC Neck 114 Y Hodgkin Lymph. / Breast Ca
+179 MO_1227 58 F Caucasian Breast Invasive Lobular Carcinoma ILC Bone BRCA Breast 74 Y
+180 MO_1228 54 F Caucasian Skin Adnexal Carcinoma SKAC Parotid SECR Skin (Cheek) 15 Y
+181 MO_1229 50 M Caucasian Myxoid/Round-Cell Liposarcoma MRLS Thigh SARC Thigh 22 Y
+182 MO_1230 64 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 210 Y
+183 MO_1231 45 F Caucasian Stomach Adenocarcinoma STAD Pelvic Mass STAD Stomach 20 Y
+184 MO_1232 65 M Caucasian Prostate Adenocarcinoma PRAD Chest Wall PRAD Prostate 46 Y
+185 MO_1233 44 F Caucasian Adenoid Cystic Carcinoma ACYC Liver SECR Palate 22 Y
+186 MO_1236 59 M Caucasian Lung Adenocarcinoma LUAD Lymph Node LUNG Lung 6 Y
+187 MO_1237 43 F South Asian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 15 Y
+188 MO_1239 58 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 50 Y
+189 MO_1240 66 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 105 Y
+190 MO_1241 75 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 5 Y
+191 MO_1244 58 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 15 Y
+192 MO_1245 47 F Caucasian Uterine Leiomyosarcoma ULMS Lung SARC Uterus 76 Y
+193 MO_1247 46 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 128 Y
+194 MO_1248 69 F Caucasian Serous Ovarian Cancer SOC Omentum OV Ovary 0 N Breast Ductal Carcinoma
+195 MO_1249 70 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 229 Y
+196 MO_1250 53 M Caucasian Lung Adenocarcinoma LUAD Lymph Node LUNG Lung 9 Y
+197 MO_1251 45 M Caucasian Renal Clear Cell Carcinoma CCRCC Lung SARC Kidney 60 Y
+198 MO_1252 45 M Caucasian Dedifferentiated Liposarcoma DDLS Thigh SARC Thigh 45 Y
+199 MO_1253 49 M Caucasian Lung Adenocarcinoma LUAD Hilum LUNG Lung 8 Y
+200 MO_1256 42 M Caucasian Adrenocortical Carcinoma ACC Lymph Node ACC Adrenal 12 Y
+201 MO_1260 61 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 21 Y
+202 MO_1262 53 M African Am. Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 68 Y
+203 MO_1263 65 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 117 Y
+204 MO_1264 22 F Caucasian Fibrolamellar Carcinoma FLC Abdom. Nodule HCC Liver 47 Y
+205 MO_1265 54 F Caucasian Colon Adenocarcinoma COAD Liver COLO Colorectal 62 Y Breast Ductal Carcinoma
+206 MO_1266 58 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 117 Y
+207 MO_1267 63 F Caucasian Breast Invasive Ductal Carcinoma IDC Skin Punch BRCA Breast 13 Y Basal Cell Carcinoma
+208 MO_1268 52 F Caucasian Mullerian Poorly Differentiated Carcinoma Retroperitoneum MISC Mullerian 1 N
+209 MO_1269 46 F Caucasian Breast Invasive Ductal Carcinoma IDC Sternal Mass BRCA Breast 142 Y
+210 MO_1271 63 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 150 Y
+211 MO_1272 42 M Caucasian Chromophobe Renal Cell Carcinoma CHRCC Lymph Node KDNY Kidney 70 Y
+212 MO_1274 50 M Caucasian Small Cell Carcinoma of Unknown Primary SCUP Liver MISC Unknown 10 Y
+213 MO_1276 41 F Caucasian Breast Invasive Ductal Carcinoma IDC Lung BRCA Breast 55 Y
+214 MO_1277 54 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 101 Y
+215 MO_1278 49 F Caucasian Perivascular Epithelioid Cell Tumor PECOMA Liver MISC Unknown 4 Y
+216 MO_1279 65 F African Am. Colon Adenocarcinoma COAD Lymph Node COLO Colorectal 35 Y
+217 MO_1283 35 F Caucasian Embryonal Rhabdomyosarcoma ERMS Pelvic Mass SARC Cervix 7 Y
+218 MO_1284 61 F Caucasian Lung Adenocarcinoma LUAD Infraclavicular Mass MISC Unknown 2 N
+219 MO_1285 28 F Caucasian Poorly Differentiated Non-Small Cell Lung Cancer NSCLCPD Lymph Node MISC Unknown 2 N
+220 MO_1286 58 F Caucasian Lung Squamous Cell Carcinoma LUSC Lymph Node LUNG Lung 21 Y
+221 MO_1287 56 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 34 Y
+222 MO_1288 77 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 168 Y
+223 MO_1289 49 F Caucasian Breast Invasive Ductal Carcinoma IDC Chest Wall BRCA Breast 80 Y
+224 MO_1290 54 M Caucasian Small Cell Bladder Cancer SCBC Lymph Node BLCA Bladder 6 Y
+225 MO_1292 35 F African Am. Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 0 N
+226 MO_1294 61 F Caucasian Lung Adenocarcinoma LUAD Lymph Node LUNG Lung 8 Y
+227 MO_1295 23 M Caucasian Desmoplastic Small-Round-Cell Tumor DSRCT Abdom. Mass SARC Unknown 12 Y
+228 MO_1296 68 F Caucasian Pancreatobiliary Ampullary Carcinoma PAMPCA Liver CHOL Pancreaticobiliary 13 Y
+229 MO_1297 67 M Caucasian Neuroendocrine Carcinoma of the Stomach Liver STAD Stomach 179 Y
+230 MO_1298 64 F African Am. Breast Invasive Ductal Carcinoma IDC Chest Wall BRCA Breast 141 Y
+231 MO_1300 75 F Caucasian Breast Invasive Lobular Carcinoma ILC Bladder BRCA Breast 44 Y
+232 MO_1301 42 F Caucasian Breast Invasive Ductal Carcinoma IDC Brain BRCA Breast 16 Y
+233 MO_1302 44 F Caucasian Breast Invasive Ductal Carcinoma IDC Peritoneal Fluid BRCA Breast 61 Y
+234 MO_1304 67 M Caucasian Cutaneous Squamous Cell Carcinoma CSCC Subq HNSC Head 21 Y
+235 MO_1305 51 F Caucasian Inflammatory Breast Cancer IBC Liver BRCA Breast 79 Y
+236 MO_1306 38 M Caucasian Yolk Sac Tumor TYST Liver TGCT Testes 108 Y
+237 MO_1307 69 M Caucasian Cutaneous Squamous Cell Carcinoma CSCC Neck HNSC Head 14 Y Prostate Carcinoma
+238 MO_1309 61 M Caucasian Oropharynx Squamous Cell Carcinoma OPHSC Neck Mass HNSC Tonsil 14 Y
+239 MO_1310 62 F Caucasian Leiomyosarcoma LMS Liver SARC Vena Cava 88 Y
+240 MO_1312 61 M Caucasian Extrahepatic Cholangiocarcinoma EHCH Liver CHOL Bile Duct 14 Y
+241 MO_1313 65 M Caucasian Soft Tissue Myoepithelial Carcinoma STMYEC Liver SECR Foot 46 Y
+242 MO_1315 54 F Caucasian Lung Squamous Cell Carcinoma LUSC Lung LUNG Lung 9 Y
+243 MO_1316 70 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 182 Y
+244 MO_1317 58 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 74 Y
+245 MO_1318 63 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 45 Y
+246 MO_1319 61 F Caucasian Gastrointestinal Stromal Tumor GIST Abdom. Mass STAD Unknown 46 Y
+247 MO_1320 44 F South Asian Breast Invasive Ductal Carcinoma IDC Skin Punch BRCA Breast 12 Y
+248 MO_1322 27 F Caucasian Adrenocortical Carcinoma ACC Lung ACC Adrenal 17 Y
+249 MO_1323 65 F Caucasian Breast Invasive Ductal Carcinoma IDC Subq Chest Wall BRCA Breast 93 Y
+250 MO_1324 57 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 108 Y
+251 MO_1325 54 M Caucasian Lung Adenocarcinoma LUAD Liver LUNG Lung 25 Y
+252 MO_1328 78 M Caucasian Penile Squamous Cell Carcinoma PSCC Lymph Node HNSC Penis >13 Y
+253 MO_1329 59 F Caucasian Myxoid Chondrosarcoma MYCHS Shoulder Mass SARC Humerus 11 Y
+254 MO_1330 67 F Caucasian Breast Invasive Ductal Carcinoma IDC Sternal Mass BRCA Breast 372 Y
+255 MO_1331 68 F Caucasian Oral Cavity Squamous Cell Carcinoma OCSC Lung HNSC Tongue 16 Y
+256 MO_1333 34 M Caucasian Embryonal Carcinoma EMBCA Lymph Node TGCT Testes 128 Y
+257 MO_1335 46 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 58 Y
+258 MO_1336 75 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 204 Y
+259 MO_1337 61 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 18 Y
+260 MO_1338 43 M Caucasian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Bile Duct 5 Y
+261 MO_1339 78 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 11 Y
+262 MO_1340 53 M Caucasian Signet Ring Cell Carcinoma of the Stomach SSRCC Peritoneal Fluid STAD Stomach 26 Y
+263 MO_1341 31 F African Am. Extrahepatic Cholangiocarcinoma EHCH Abdom. Mass CHOL Bile Duct 15 Y
+264 MO_1342 62 F Caucasian Adenocarcinoma, NOS ADNOS Bone MISC Unknown 1 N
+265 MO_1343 53 M Caucasian Oral Cavity Squamous Cell Carcinoma OCSC Lung HNSC Tongue 58 Y
+266 MO_1344 57 M Caucasian Synovial Sarcoma SYNS Pleural Mass SARC Lung 24 Y
+267 MO_1345 35 M Caucasian Oral Cavity Squamous Cell Carcinoma OCSC Neck Mass HNSC Tongue 9 Y
+268 MO_1346 57 M Caucasian Soft Tissue Myoepithelial Carcinoma STMYEC Lymph Node SECR Forearm 9 Y
+269 MO_1347 46 M Caucasian Extrahepatic Cholangiocarcinoma EHCH Lymph Node CHOL Bile Duct 11 Y Ampullary Carcinoma
+270 MO_1355 65 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 180 Y
+271 MO_1357 52 M Caucasian Cutaneous Melanoma SKCM Back SKCM Skin 155 Y
+272 MO_1359 77 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 32 Y
+273 MO_1360 73 M African Am. Salivary Duct Carcinoma SDCA Subq Nodule SECR Parotid Gland 4 Y
+274 MO_1361 55 M Caucasian Bladder Urothelial Carcinoma BLCA Omentum BLCA Bladder >14 Y Renal Cell Carcinoma
+275 MO_1362 59 M Caucasian Oropharynx Squamous Cell Carcinoma OPHSC Lung HNSC Tonsil 47 Y
+276 MO_1363 55 F Caucasian Poorly Differentiated Carcinoma, NOS PDC Lymph Node MISC Unknown 7 Y
+277 MO_1364 56 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 28 Y
+278 MO_1366 32 M Caucasian Cutaneous Melanoma SKCM Abdom. Wall SKCM Skin 192 Y
+279 MO_1367 39 M Caucasian Oral Cavity Squamous Cell Carcinoma OCSC Lymph Node HNSC Tongue 23 Y
+280 MO_1369 65 F Caucasian Intrahepatic Cholangiocarcinoma IHCH Lung CHOL Unknown 40 Y
+281 MO_1370 24 F Caucasian Undifferentiated Pleomorphic Sarcoma/Malignant F MFH Thigh Mass SARC Thigh 38 Y
+282 MO_1371 39 M Caucasian Granular Cell Tumor GCT Scapular Mass MISC Testes 40 Y
+283 MO_1372 73 F Caucasian Mullerian Adenocarcinoma Abdom. Wall MISC Unknown 24 Y
+284 MO_1373 69 M Caucasian Oral Cavity Squamous Cell Carcinoma OCSC Lung HNSC Tongue 240 Y
+285 MO_1374 50 M Caucasian Cutaneous Melanoma SKCM Breast SKCM Skin 70 Y
+286 MO_1375 50 M Caucasian Esophageal Adenocarcinoma ESCA Liver ESCA Esophagus 11 Y
+287 MO_1376 73 F Caucasian Extrahepatic Cholangiocarcinoma EHCH Liver CHOL Gall Bladder 8 Y
+288 MO_1377 53 M Caucasian Adrenocortical Carcinoma ACC Liver ACC Adrenal 151 Y
+289 MO_1378 52 F Caucasian Serous Ovarian Cancer SOC Lymph Node OV Ovary 23 Y
+290 MO_1379 69 F Caucasian Adenocarcinoma, NOS ADNOS Abdom. Mass MISC Unknown 36 Y
+291 MO_1380 67 M Caucasian Esophageal Adenocarcinoma ESCA Liver ESCA Esophagus 19 Y
+292 MO_1381 55 M Caucasian Extraskeletal Myxoid Chondrosarcoma EMCHS Lung SARC Thigh 252 Y
+293 MO_1382 57 F Caucasian Synovial Sarcoma SYNS Lung SARC Buttock 26 Y
+294 MO_1383 58 F Caucasian Adenocarcinoma, NOS ADNOS Liver MISC Unknown 1 N
+295 MO_1384 59 F Caucasian Breast Invasive Ductal Carcinoma IDC Bone BRCA Breast 60 Y
+296 MO_1385 49 M Caucasian Adenoid Cystic Carcinoma ACYC Submandible SECR Submandibular Glan 140 Y Melanoma / Pap. Thyroid
+297 MO_1386 49 F Caucasian Breast Invasive Ductal Carcinoma IDC Skin BRCA Breast 16 Y
+298 MO_1387 39 F Caucasian Breast Invasive Ductal Carcinoma IDC Bone BRCA Breast 32 Y
+299 MO_1388 44 M Caucasian Extrahepatic Cholangiocarcinoma EHCH Brain CHOL Bile Duct 10 Y
+300 MO_1390 40 F African Am. Adenoid Cystic Carcinoma ACYC Brain SECR Skull Base 28 Y
+301 MO_1391 47 M Caucasian Myxoid/Round-Cell Liposarcoma MRLS Mesenteric Mass SARC Thigh 49 Y
+302 MO_1393 62 F Caucasian Serous Ovarian Cancer SOC Liver OV Ovary 33 Y
+303 MO_1394 52 F Caucasian High-Grade Sarcoma Retroperitoneum SARC Retroperitoneum 53 Y
+304 MO_1395 58 F Caucasian Esophageal Adenocarcinoma ESCA Liver ESCA Esophagus 1 N
+305 MO_1396 68 F Caucasian Anaplastic Thyroid Cancer THAP Thyroid THCA Thyroid 3 Y
+306 MO_1397 51 M Caucasian Poorly Differentiated Non-Small Cell Lung Cancer NSCLCPD Lymph Node LUNG Lung 21 Y
+307 MO_1399 59 F Caucasian Breast Invasive Ductal Carcinoma IDC Bone BRCA Breast 45 Y
+308 MO_1400 52 F Caucasian Esophageal Squamous Cell Carcinoma ESCC Liver HNSC Esophagus 10 Y
+309 MO_1402 53 F Caucasian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Liver 17 Y
+310 MO_1403 60 F Caucasian Dedifferentiated Liposarcoma DDLS Abdom. Mass SARC Abdomen 77 Y
+311 MO_1404 77 F Caucasian Uterine Leiomyosarcoma ULMS Abdom. Mass SARC Uterus 23 Y
+312 MO_1407 74 F Caucasian Poorly Differentiated Carcinoma, NOS PDC Lymph Node MISC Unknown 29 Y
+313 MO_1408 70 M Caucasian Adenoid Cystic Carcinoma ACYC Lung SECR Parotid Gland 146 Y
+314 MO_1410 66 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 32 Y
+315 MO_1411 38 F African Am. Breast Invasive Lobular Carcinoma ILC Chest Wall BRCA Breast 18 Y
+316 MO_1412 63 F Caucasian Cutaneous Melanoma SKCM Lymph Node SKCM Skin 120 Y
+317 MO_1415 46 F African Am. Breast Invasive Ductal Carcinoma IDC Skin Punch BRCA Breast 19 Y
+318 MO_1416 39 M Caucasian Esophageal Adenocarcinoma ESCA Liver ESCA Esophagus 1 N
+319 MO_1418 55 F African Am. Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 9 Y
+320 MO_1419 66 F Caucasian Sarcomatoid Carcinoma Peritoneal Nodule MISC Unknown 11 Y
+321 MO_1420 64 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 40 Y
+322 MO_1421 56 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 24 Y
+323 MO_1423 31 M Caucasian Adamantinoma Lung MISC Tibia 163 Y
+324 MO_1424 64 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 18 Y
+325 MO_1425 47 F Caucasian Breast Invasive Lobular Carcinoma ILC Lymph Node BRCA Breast 56 Y
+326 MO_1426 66 F Caucasian Breast Invasive Ductal Carcinoma IDC Brain BRCA Breast 27 Y
+327 MO_1427 55 F Caucasian Breast Invasive Ductal Carcinoma IDC Chest Wall BRCA Breast 197 Y
+328 MO_1428 63 F Caucasian Adenocarcinoma, NOS ADNOS Liver MISC Unknown 9 Y
+329 MO_1433 50 M Caucasian Lung Adenocarcinoma LUAD Lymph Node LUNG Lung 7 Y
+330 MO_1434 56 F Caucasian Adrenocortical Carcinoma ACC Liver ACC Adrenal 42 Y
+331 MO_1435 58 F Caucasian Breast Invasive Lobular Carcinoma ILC Liver BRCA Breast 192 Y
+332 MO_1437 67 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 3 Y
+333 MO_1438 33 F Caucasian Alveolar Soft Part Sarcoma ASPS Thigh SARC Thigh 5 Y
+334 MO_1439 32 F Caucasian Metaplastic Breast Cancer MBC Liver BRCA Breast 55 Y
+335 MO_1442 53 M Caucasian Adrenocortical Carcinoma ACC Abdom. Mass ACC Adrenal 10 Y
+336 MO_1443 63 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 10 Y
+337 MO_1444 60 F Hispanic Breast Invasive Ductal Carcinoma IDC Psoas Muscle BRCA Breast 84 Y
+338 MO_1446 58 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 7 Y
+339 MO_1447 58 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 10 Y
+340 MO_1448 65 M Caucasian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Liver 31 Y
+341 MO_1449 22 M Caucasian Ewing Sarcoma ES Lung SARC Ankle 34 Y
+342 MO_1452 60 F Caucasian Ovarian Adenocarcinoma Lymph Node OV Ovary 47 Y
+343 MO_1453 53 M Caucasian Esophageal Squamous Cell Carcinoma ESCC Lymph Node HNSC Esophagus 18 Y
+344 MO_1454 81 F Caucasian Breast Invasive Lobular Carcinoma ILC Liver BRCA Breast 1 N
+345 MO_1455 65 F Caucasian Breast Invasive Lobular Carcinoma ILC Bone BRCA Breast 165 Y
+346 MO_1458 71 F Caucasian Serous Ovarian Cancer SOC Omentum MISC Ovary 2 N Myxofibrosarcoma
+347 MO_1459 66 M Caucasian Esophageal Adenocarcinoma ESCA Lymph Node ESCA Esophagus 26 Y
+348 MO_1460 64 M Caucasian Prostate Neuroendocrine Carcinoma PRNE Liver PRAD Prostate 29 Y
+349 MO_1462 20 F Caucasian Fibrolamellar Carcinoma FLC Liver HCC Liver 3 Y
+350 MO_1464 68 F Caucasian Serous Ovarian Cancer SOC Thoracic Fluid OV Fallopian Tube 1 N
+351 MO_1465 42 F Caucasian Glioblastoma Multiforme GBM Brain GBM Brain 5 Y
+352 MO_1466 74 F Caucasian Pancreatic Neuroendocrine Tumor PANET Liver PAAD Pancreas 57 Y
+353 MO_1469 65 M African Am. Prostate Neuroendocrine Carcinoma PRNE Pelvic Mass PRAD Prostate 84 Y
+354 MO_1472 66 M Caucasian Prostate Neuroendocrine Carcinoma PRNE Lymph Node PRAD Prostate 26 Y
+355 MO_1473 76 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 167 Y
+356 MO_1474 49 F Caucasian Breast Invasive Ductal Carcinoma IDC Lung BRCA Breast 12 Y
+357 MO_1475 27 F Caucasian Myxofibrosarcoma MFS Lung SARC Abdomen 20 Y
+358 MO_1476 71 M Caucasian Esophageal Squamous Cell Carcinoma ESCC Liver HNSC Esophagus 1 N
+359 MO_1477 56 M Caucasian Esophageal Adenocarcinoma ESCA Liver ESCA Esophagus 1 N
+360 MO_1478 62 M Caucasian Pancreatic Neuroendocrine Tumor PANET Lymph Node PAAD Pancreas 10 Y
+361 MO_1479 55 M Caucasian Rhabdomyosarcoma RMS Lung SARC Leg 18 Y
+362 MO_1480 59 M Caucasian Esophageal Adenocarcinoma ESCA Liver ESCA Esophagus 4 Y
+363 MO_1481 49 M Caucasian Soft Tissue Myoepithelial Carcinoma STMYEC Lung SECR Unknown 23 Y
+364 MO_1482 59 M Caucasian Prostate Neuroendocrine Carcinoma PRNE Liver PRAD Prostate 77 Y
+365 MO_1483 49 M Caucasian Undifferentiated Pleomorphic Sarcoma MFH Lung SARC Thigh 20 Y
+366 MO_1484 49 F Caucasian Myoepithelial Carcinoma MYEC Lung SECR Parotid Gland 33 Y
+367 MO_1485 66 M Caucasian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Unknown 3 N
+368 MO_1486 66 F Caucasian Pancreatic Adenocarcinoma PAAD Liver PAAD Pancreas 8 Y
+369 MO_1487 31 M Caucasian Sex Cord Stromal Tumor TSCST Lymph Node MISC Testes 3 N
+370 MO_1488 66 M Caucasian Head and Neck Neuroendocrine Carcinoma HNNE Abdom. Mass MISC Larynx 15 Y
+371 MO_1489 71 M Caucasian Esophageal Squamous Cell Carcinoma ESCC Liver HNSC Esophagus 25 Y
+372 MO_1490 74 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 130 Y
+373 MO_1491 65 F Caucasian Adenosarcoma Liver MISC Pelvis 19 Y
+374 MO_1492 59 M Caucasian Prostate Adenocarcinoma PRAD Neck Mass PRAD Prostate 81 Y
+375 MO_1493 66 M Caucasian Esophageal Adenocarcinoma ESCA Pelvic Mass ESCA Esophagus 30 Y
+376 MO_1494 52 F South Asian Pancreatic Adenocarcinoma PAAD Liver PAAD Pancreas 11 Y
+377 MO_1495 72 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 168 Y
+378 MO_1496 58 M Caucasian Prostate Neuroendocrine Carcinoma PRNE Lymph Node PRAD Prostate 1 N
+379 MO_1499 73 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 52 Y
+380 MO_1500 67 M Caucasian Esophageal Adenocarcinoma ESCA Liver ESCA Esophagus 1 N
+381 MO_1502 71 M Caucasian Adenoid Cystic Carcinoma ACYC Lung SECR Salivary Gland 28 Y
+382 MO_1503 43 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 13 Y
+383 MO_1506 58 M Caucasian Esophageal Adenocarcinoma ESCA Lymph Node ESCA Esophagus 22 Y
+384 MO_1507 58 F Caucasian Neuroendocrine Tumor, NOS NETNOS Liver MISC Unknown 6 Y
+385 MO_1509 63 F Caucasian Breast Invasive Lobular Carcinoma ILC Bone BRCA Breast 28 Y
+386 MO_1510 64 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 43 Y
+387 MO_1511 69 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 17 Y
+388 MO_1513 61 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 240 Y
+389 MO_1514 74 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 64 Y
+390 MO_1515 55 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 105 Y
+391 MO_1516 58 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 153 Y
+392 MO_1517 75 M Caucasian Prostate Adenocarcinoma PRAD Adrenal PRAD Prostate 67 Y
+393 MO_1518 63 F Caucasian Poorly Differentiated Carcinoma, NOS PDC Liver MISC Unknown 2 N
+394 MO_1520 53 M Hispanic Esophageal Adenocarcinoma ESCA Shoulder ESCA Esophagus 12 Y
+395 MO_1521 66 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 224 Y
+396 MO_1522 66 F Caucasian Collecting Duct Renal Cell Carcinoma CDRDD Lymph Node KDNY Kidney 8 Y
+397 MO_1524 59 F Caucasian Breast Invasive Lobular Carcinoma ILC Lymph Node BRCA Breast 29 Y
+398 MO_1525 63 M Caucasian Osteosarcoma OS Pleural Mass SARC Thigh 120 Y Solitary Fibrous Tumor
+399 MO_1527 58 F Caucasian Breast Invasive Ductal Carcinoma IDC Hip Lesion BRCA Breast 62 Y
+400 MO_1528 63 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 7 Y
+401 MO_1529 48 F Caucasian Pancreatic Neuroendocrine Tumor PANET Liver PAAD Pancreas 2 Y
+402 MO_1530 71 M Caucasian Renal Clear Cell Carcinoma CCRCC Liver KDNY Kidney 91 Y
+403 MO_1532 48 M Caucasian Salivary Carcinoma SACA Lymph Node SECR Salivary Gland 84 Y
+404 MO_1533 59 F Caucasian Breast Invasive Ductal Carcinoma IDC Subq Nodule BRCA Breast 57 Y
+405 MO_1534 31 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 55 Y
+406 MO_1536 55 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 11 Y
+407 MO_1537 45 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 27 Y
+408 MO_1540 50 F Caucasian Breast Invasive Ductal Carcinoma IDC Bone BRCA Breast 27 Y
+409 MO_1541 71 M South Asian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 14 Y
+410 MO_1542 67 M Caucasian Poorly Differentiated Carcinoma, NOS PDC Lymph Node MISC Unknown 2 N
+411 MO_1543 61 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 132 Y
+412 MO_1547 66 F Caucasian Salivary Carcinoma, Other OSACA Lymph Node SECR Parotid 30 Y
+413 MO_1550 61 F African Am. Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Liver 27 Y
+414 MO_1551 72 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 20 Y
+415 MO_1552 41 F Caucasian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Liver 15 Y
+416 MO_1553 56 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 93 Y
+417 MO_1555 70 F Caucasian Angiosarcoma ANGS Subq Nodule SARC Back 39 Y
+418 MO_1556 59 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 107 Y
+419 MO_1557 66 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 149 Y
+420 MO_1558 77 F Caucasian Lung Adenocarcinoma LUAD Lymph Node LUNG Lung 25 Y
+421 MO_1562 60 F Caucasian Breast Invasive Ductal Carcinoma IDC Axillary Mass BRCA Breast 21 Y
+422 MO_1563 68 M Caucasian Squamous Cell Carcinoma, NOS SCCNOS Omental Mass MISC Unknown 2 N
+423 ES_5001 65 F South Asian Breast Invasive Ductal Carcinoma IDC Brain BRCA Breast 26 Y
+424 ES_5004 33 F Caucasian Colon Adenocarcinoma COAD Abdom. Wall COLO Colon 34 Y
+425 ES_5005 27 F Caucasian Cervical Neuroendocrine Tumor CENE Cervix MISC Cervix 1 N
+426 TP_2001 70 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 39 Y
+427 TP_2002 59 F Caucasian Adenocarcinoma, NOS ADNOS Peritoneal Fluid MISC Unknown 98 Y Breast Ductal Carcinoma
+428 TP_2004 52 M Caucasian Breast Invasive Carcinoma, NOS BRCNOS Bone BRCA Breast 17 Y
+429 TP_2008 26 F Caucasian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Liver 16 Y
+430 TP_2009 58 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 21 Y
+431 TP_2010 64 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 66 Y
+432 TP_2011 56 F Caucasian Renal Cell Carcinoma RCC Liver KDNY Kidney 180 Y
+433 TP_2013 58 M East Asian Angiosarcoma ANGS Liver SARC Scalp 27 Y
+434 TP_2014 70 F African Am. Uterine Endometrioid Carcinoma UEC Omentum MISC Unknown 36 Y
+435 TP_2015 53 F Caucasian Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 143 Y
+436 TP_2016 32 F Caucasian Extrahepatic Cholangiocarcinoma EHCH Lymph Node CHOL Bile Duct 23 Y
+437 TP_2017 51 M Caucasian Colon Adenocarcinoma COAD Abdom. Mass COLO Colorectal 84 Y
+438 TP_2018 72 M Caucasian Penile Squamous Cell Carcinoma PSCC Thigh Mass HNSC Penis 13 Y
+439 TP_2019 49 M Caucasian Cutaneous Melanoma SKCM Subq Nodule SKCM Skin 3 Y
+440 TP_2020 55 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 39 Y
+441 TP_2021 56 M Caucasian Urethral Urothelial Carcinoma UCU Lymph Node BLCA Ureter 61 Y
+442 TP_2023 23 F Caucasian Undifferentiated High-Grade Sarcoma SARCNOS Thigh Mass SARC Thigh 3 Y
+443 TP_2024 56 F Caucasian Small Cell Lung Cancer SCLC Liver LUNG Lung 59 Y Breast Ductal Carcinoma
+444 TP_2025 64 F African Am. Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 112 Y
+445 TP_2027 68 M Caucasian Cutaneous Melanoma SKCM Subq Nodule SKCM Skin 54 Y
+446 TP_2028 72 F Caucasian Sebaceous Carcinoma SEBA Subq Nodule SECR Orbit Of Eye 48 Y
+447 TP_2029 45 M Caucasian Colon Adenocarcinoma COAD Abdom. Mass COLO Colorectal 17 Y
+448 TP_2032 74 M Caucasian Prostate Adenocarcinoma PRAD Peritoneal Nodule PRAD Prostate 123 Y Papillary Thyroid
+449 TP_2034 50 M East Asian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 14 Y
+450 TP_2037 49 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 176 Y
+451 TP_2038 64 F South Asian Intrahepatic Cholangiocarcinoma IHCH Liver CHOL Liver 18 Y
+452 TP_2042 70 M Caucasian Lung Adenocarcinoma LUAD Lung MISC Lung 10 Y
+453 TP_2043 62 M Caucasian Solitary Fibrous Tumor SFT Lung SARC Lung 106 Y Prostate Carcinoma
+454 TP_2047 52 M Caucasian Pancreatic Adenocarcinoma PAAD Lung PAAD Pancreas 24 Y
+455 TP_2050 61 M Caucasian Seminal Vesicle Carcinoma Abdom. Mass MISC Seminal Vesicle 5 Y
+456 TP_2052 52 F Caucasian Poorly Differentiated Non-Small Cell Lung Cancer NSCLCPD Adrenal LUNG Lung 16 Y
+457 TP_2054 70 M South Asian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 33 Y
+458 TP_2055 41 F East Asian Atypical Meningioma ATM Brain MISC Skull Base 58 Y
+459 TP_2056 46 F Caucasian Glioblastoma Multiforme GBM Brain GBM Brain 7 Y
+460 TP_2058 62 M Caucasian Bladder Urothelial Carcinoma BLCA Bladder BLCA Bladder 0 N
+461 TP_2059 71 M Caucasian Extramammary Paget Disease EMPD Lymph Node MISC Scrotum 18 Y
+462 TP_2060 72 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 17 Y
+463 TP_2061 65 M Caucasian Prostate Carcinosarcoma Pelvic Mass PRAD Prostate 61 Y
+464 TP_2064 72 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 114 Y
+465 TP_2065 52 F Caucasian Glioblastoma Multiforme GBM Brain GBM Brain 3 Y
+466 TP_2067 66 F Caucasian Uterine Leiomyosarcoma ULMS Pelvic Mass SARC Uterus 7 Y
+467 TP_2069 66 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 29 Y
+468 TP_2070 64 F Caucasian Uterine Leiomyosarcoma ULMS Pelvic Mass SARC Uterus 48 Y
+469 TP_2071 52 F East Asian Clear Cell Ovarian Cancer CCOV Pelvic Mass OV Ovary 12 Y
+470 TP_2072 38 M African Am. Solitary Fibrous Tumor SFT Spinal Mass SARC Spinal Canal 5 Y
+471 TP_2073 52 F Caucasian Pleural Mesothelioma PLMESO Lymph Node LUNG Pleura 17 Y
+472 TP_2074 66 F Caucasian Clear Cell Ovarian Cancer CCOV Lymph Node OV Ovary 21 Y
+473 TP_2075 43 F Caucasian Solitary Fibrous Tumor SFT Lacrimal Gland SARC Eyelid 11 Y
+474 TP_2077 68 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 84 Y
+475 TP_2078 86 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 172 Y
+476 TP_2079 67 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 69 Y
+477 TP_2080 57 M Caucasian Prostate Adenocarcinoma PRAD Prostate PRAD Prostate 2 Y
+478 TP_2081 63 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 37 Y
+479 TP_2083 67 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 171 Y
+480 TP_2086 74 M Caucasian Pancreatic Adenocarcinoma PAAD Liver PAAD Pancreas 53 Y
+481 TP_2087 59 F Caucasian Serous Ovarian Cancer SOC Colon OV Ovary 29 Y
+482 TP_2090 37 M Caucasian Prostate Adenocarcinoma PRAD Bone PRAD Prostate 12 Y
+483 TP_2091 58 M Caucasian Glioblastoma Multiforme GBM Brain GBM Brain 5 Y
+484 TP_2093 64 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 12 Y
+485 TP_2096 54 M Caucasian Prostate Adenocarcinoma PRAD Lymph Node PRAD Prostate 60 Y
+486 TP_2098 78 M Caucasian Myoepithelial Carcinoma MYEC Gluteal Mass SECR Parotid Gland 88 Y
+487 TP_2100 66 F Caucasian Esophageal Squamous Cell Carcinoma ESCC Liver HNSC Esophagus 1 N
+488 TP_2101 46 M Caucasian Oral Cavity Squamous Cell Carcinoma OCSC Lung HNSC Tongue 29 Y
+489 TP_2102 44 M Caucasian Undifferentiated Pleomorphic Sarcoma MFH Arm SARC Thigh 61 Y
+490 TP_2106 59 F Caucasian Pancreatic Adenocarcinoma PAAD Bone PAAD Pancreas 53 Y
+491 TP_2109 48 F Caucasian Breast Invasive Lobular Carcinoma ILC Lymph Node BRCA Breast 1 N
+492 TP_2118 45 F African Am. Breast Invasive Ductal Carcinoma IDC Lymph Node BRCA Breast 16 Y
+493 TP_2119 59 M Caucasian Dedifferentiated Chondrosarcoma DDCHS Liver SARC Thigh 108 Y
+494 TP_2120 64 F Caucasian Glioblastoma Multiforme GBM Brain GBM Brain 1 N
+495 TP_2122 67 F Caucasian Metaplastic Breast Cancer MBC Lymph Node BRCA Breast 9 Y
+496 TP_2123 25 M Caucasian Ependymoma EPM Brain MISC Brain 197 Y
+497 TP_2130 70 M Caucasian Sinonasal Squamous Cell Carcinoma SNSC Sphenoid Sinus HNSC Sinus 11 Y
+498 TP_2131 77 M Caucasian Bladder Urothelial Carcinoma BLCA Liver BLCA Bladder 7 Y
+499 TP_2141 43 F Caucasian Breast Invasive Ductal Carcinoma IDC Liver BRCA Breast 36 Y
+500 TP_2156 75 M Caucasian Prostate Adenocarcinoma PRAD Liver PRAD Prostate 156 Y

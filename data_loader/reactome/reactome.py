@@ -4,11 +4,6 @@ import pandas as pd
 from os.path import join
 from gmt_reader import GMT
 
-reactome_base_dir = '../data/reactome/'
-relations_file_name = 'ReactomePathwaysRelation.txt'
-pathway_names = 'ReactomePathways.txt'
-pathway_genes = 'ReactomePathways.gmt'
-
 def add_edges(G, node, n_levels):
     edges = []
     source = node
@@ -56,32 +51,31 @@ def get_layers_from_net(net, n_levels):
     return layers
 
 class Reactome():
-    def __init__(self):
+    def __init__(self, data_dir):
+        self.data_dir = data_dir
         self.pathway_names = self.load_names()
         self.hierarchy = self.load_hierarchy()
         self.pathway_genes = self.load_genes()
 
     def load_names(self):
-        filename = join(reactome_base_dir, pathway_names)
-        df = pd.read_csv(filename, sep='\t')
+        df = pd.read_csv(join(self.data_dir, 'ReactomePathways.txt'), sep='\t')
         df.columns = ['reactome_id', 'pathway_name', 'species']
         return df
 
     def load_genes(self):
-        filename = join(reactome_base_dir, pathway_genes)
         gmt = GMT()
-        df = gmt.load_data(filename, pathway_col=1, genes_col=3)
+        df = gmt.load_data(join(self.data_dir, 'ReactomePathways.gmt'), 
+                           pathway_col=1, genes_col=3)
         return df
 
     def load_hierarchy(self):
-        filename = join(reactome_base_dir, relations_file_name)
-        df = pd.read_csv(filename, sep='\t')
+        df = pd.read_csv(join(self.data_dir, 'ReactomePathwaysRelation.txt'), sep='\t')
         df.columns = ['child', 'parent']
         return df
 
 class ReactomeNetwork():
-    def __init__(self):
-        self.reactome = Reactome()  # low level access to reactome pathways and genes
+    def __init__(self, data_dir):
+        self.reactome = Reactome(data_dir)  # low level access to reactome pathways and genes
         self.netx = self.get_reactome_networkx()
 
     def get_terminals(self):
@@ -152,5 +146,3 @@ class ReactomeNetwork():
 
         layers.append(dict)
         return layers
-
-reactome_network = ReactomeNetwork()
