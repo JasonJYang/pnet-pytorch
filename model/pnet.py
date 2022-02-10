@@ -1,4 +1,3 @@
-import logging
 import torch
 import itertools
 import numpy as np
@@ -13,7 +12,7 @@ class Diagonal(nn.Module):
         self.output_dim = output_dim
         self.use_bias = use_bias
         input_dim = input_shape[1]
-        self.n_inputs_per_node = input_dim // self.units
+        self.n_inputs_per_node = input_dim // self.output_dim
 
         # create parameter
         self.kernel = nn.Parameter(torch.randn(1, input_dim))
@@ -62,8 +61,8 @@ class SparseTF(nn.Module):
             torch.nn.init.zeros_(self.bias)
 
     def forward(self, inputs):
-        map = self.map(inputs.device)
-        tt = self.kernal * map
+        map = self.map.to(inputs.device)
+        tt = self.kernel * map
         output = torch.matmul(inputs, tt)
         if self.use_bias:
             output = output + self.bias
@@ -75,6 +74,7 @@ class Dense(nn.Module):
         super(Dense, self).__init__()
         input_dim = input_shape[1]
         self.output_dim = output_dim
+        self.use_bias = use_bias
 
         self.kernel = nn.Parameter(torch.randn(input_dim, output_dim))
         if self.use_bias:
@@ -94,11 +94,56 @@ class Dense(nn.Module):
             x = x + self.bias
         return x
 
+class PNetLayer(nn.Module):
+    def __init__(self, mapp, dropout, sparse, use_bias, attention, batch_normal):
+        super(PNetLayer, self).__init__()
+        self.attention = attention
+        self.batch_normal = batch_normal
+        n_genes, n_pathways = mapp.shape
+        if sparse:
+            mapp = self.df_to_tensor(mapp)
+            self.hidden_layer = SparseTF(n_pathways, mapp, use_bias=use_bias, input_shape=(None, n_genes))
+        else:
+            self.hidden_layer = Dense(n_pathways, input_shape=(None, n_genes))
+        self.activation = nn.Tanh()
+        
+        if attention:
+            self.attention_prob_layer = Dense(n_pathways, input_shape=(None, n_genes))
+            self.attention_activation = nn.Sigmoid()
+        
+        # testing
+        self.decision_layer = Dense(1, input_shape=(None, n_genes))
+        if batch_normal:
+            self.decision_batch_normal = nn.BatchNorm1d(num_features=n_pathways)
+        
+        self.dropout_layer = nn.Dropout(dropout)
+
+    def forward(self, outcome):
+        outcome = self.hidden_layer(outcome)
+        outcome = self.activation(outcome)
+        if self.attention:
+            outcome = self.attention_prob_layer(outcome)
+            outcome = self.attention_activation(outcome)
+        
+        decision_outcome = self.decision_layer(outcome)
+        if self.batch_normal:
+            decision_outcome = self.decision_batch_normal(decision_outcome)
+        
+        outcome = self.dropout_layer(outcome)
+    
+        return outcome, decision_outcome
+
+    def df_to_tensor(self, df):
+        tensor = torch.from_numpy(df.to_numpy())
+        tensor = tensor.type(torch.FloatTensor)
+        return tensor
+
 
 class PNet(nn.Module):
     def __init__(self, features, genes, n_hidden_layers, direction, dropout, sparse, add_unk_genes, 
                  batch_normal, reactome_network, use_bias=False, shuffle_genes=False, attention=False, 
-                 sparse_first_layer=True):
+                 sparse_first_layer=True, logger=None):
+        super(PNet, self).__init__()
         self.feature_names = {}
         n_features = len(features)
         n_genes = len(genes)
@@ -106,11 +151,12 @@ class PNet(nn.Module):
         self.attention = attention 
         self.batch_normal = batch_normal
         self.n_hidden_layers = n_hidden_layers
+        self.logger = logger
 
         if sparse:
             if shuffle_genes == 'all':
                 ones_ratio = float(n_features) / np.prod([n_genes, n_features])
-                logging.info('ones_ratio random {}'.format(ones_ratio))
+                self.logger.info('ones_ratio random {}'.format(ones_ratio))
                 mapp = np.random.choice([0, 1], size=[n_features, n_genes], p=[1 - ones_ratio, ones_ratio])
                 self.layer1 = SparseTF(n_genes, mapp, use_bias=use_bias, input_shape=(None, n_features))
             else:
@@ -135,9 +181,8 @@ class PNet(nn.Module):
         self.batchnorm_layer1 = nn.BatchNorm1d(num_features=n_genes)
         self.decision_activation1 = nn.Sigmoid()
 
-        if n_hidden_layers > 0:
-            self.modules = OrderedDict()
-            
+        module_list = []
+        if n_hidden_layers > 0:            
             maps = self.get_layer_maps(genes, n_hidden_layers, direction, add_unk_genes)
             layer_inds = range(1, len(maps))
 
@@ -145,44 +190,24 @@ class PNet(nn.Module):
             print('dropout', layer_inds, dropout)
             dropouts = dropout[1:]
 
-            for i, map in enumerate(maps[0:-1]):
-                tmp_modules = OrderedDict()
-
+            for i, mapp in enumerate(maps[0:-1]):
                 dropout = dropouts[1]
                 names = mapp.index
                 if shuffle_genes in ['all', 'pathways']:
                     mapp = self.shuffle_genes_map(mapp)
                 n_genes, n_pathways = mapp.shape
-                logging.info('n_genes, n_pathways {} {} '.format(n_genes, n_pathways))
+                self.logger.info('n_genes, n_pathways {} {} '.format(n_genes, n_pathways))
                 print('layer {}, dropout {}'.format(i, dropout))
                 
-                if sparse:
-                    mapp = self.df_to_tensor(mapp)
-                    hidden_layer = SparseTF(n_pathways, mapp, use_bias=use_bias, input_shape=(None, n_genes))
-                else:
-                    hidden_layer = Dense(n_pathways, input_shape=(None, n_genes))
-                tmp_modules['1-hidden_layer'] = hidden_layer
-                tmp_modules['2-activation'] = nn.Tanh()
-
-                if attention:
-                    attention_probs = Dense(n_pathways, input_shape=(None, n_genes))
-                    tmp_modules['3-attention_probs'] = attention_probs
-                    tmp_modules['4-activation'] = nn.Sigmoid()
-                
-                # testing
-                tmp_modules['5-decision_layer'] = Dense(1, input_shape=(None, n_genes))
-
-                if batch_normal:
-                    tmp_modules['6-decision_batch_normal'] = nn.BatchNorm1d(num_features=n_pathways)
-                tmp_modules['7-decision_activation'] = nn.Sigmoid()
-
-                tmp_modules['8-dropout'] = nn.Dropout(dropout)
-
-                self.modules['{}-hidden-layer'.format(i)] = tmp_modules
+                pnet_layer = PNetLayer(mapp=mapp, 
+                    dropout=dropout, sparse=sparse, use_bias=use_bias, attention=attention, batch_normal=batch_normal)
+                module_list.append(pnet_layer)
 
                 self.feature_names['h{}'.format(i)] = names
+
             i = len(maps)
             self.feature_names['h{}'.format(i-1)] = maps[-1].index
+        self.module_list = nn.ModuleList(module_list)
         
     def forward(self, inputs):
         decision_outcomes = []
@@ -202,20 +227,9 @@ class PNet(nn.Module):
         decision_outcomes.append(decision_outcome)
 
         if self.n_hidden_layers > 0:
-            for layer_name, layer in self.modules.items():
-                outcome = layer['1-hidden_layer'](outcome)
-                outcome = layer['2-activation'](outcome)
-                if self.attention:
-                    outcome = layer['3-attention_probs'](outcome)
-                    outcome = layer['4-activation'](outcome)
-
-                decision_outcome = layer['5-decision_layer'](outcome)
-                if self.batch_normal:
-                    decision_outcome = layer['6-decision_batch_normal'](decision_outcome)
-                decision_outcome = layer['7-decision_activation'](decision_outcome)
+            for layer in self.module_list:
+                outcome, decision_outcome = layer(outcome)
                 decision_outcomes.append(decision_outcome)
-
-                outcome = layer['8-dropout'](outcome)
 
         return outcome, decision_outcomes
 
@@ -243,12 +257,12 @@ class PNet(nn.Module):
             print('filtered_map', filter_df.shape)
             # filtering_index = list(filtered_map.columns)
             filtering_index = filtered_map.columns
-            logging.info('layer {} , # of edges  {}'.format(i, filtered_map.sum().sum()))
+            self.logger.info('layer {} , # of edges  {}'.format(i, filtered_map.sum().sum()))
             maps.append(filtered_map)
         return maps
 
     def get_map_from_layer(self, layer_dict):
-        pathways = layer_dict.keys()
+        pathways = list(layer_dict.keys())
         print('pathways', len(pathways))
         genes = list(itertools.chain.from_iterable(layer_dict.values()))
         genes = list(np.unique(genes))
@@ -268,11 +282,11 @@ class PNet(nn.Module):
         return df.T
 
     def shuffle_genes_map(self, mapp):
-        logging.info('shuffling')
+        self.logger.info('shuffling')
         ones_ratio = np.sum(mapp) / np.prod(mapp.shape)
-        logging.info('ones_ratio {}'.format(ones_ratio))
+        self.logger.info('ones_ratio {}'.format(ones_ratio))
         mapp = np.random.choice([0, 1], size=mapp.shape, p=[1 - ones_ratio, ones_ratio])
-        logging.info('random map ones_ratio {}'.format(ones_ratio))
+        self.logger.info('random map ones_ratio {}'.format(ones_ratio))
         return mapp
 
     def df_to_tensor(self, df):

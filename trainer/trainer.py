@@ -4,34 +4,61 @@ from torchvision.utils import make_grid
 from base import BaseTrainer
 from utils import inf_loop, MetricTracker
 
-
 class Trainer(BaseTrainer):
     """
     Trainer class
     """
     def __init__(self, model, criterion, metric_fns, optimizer, config,
-                 data_loader, valid_data_loader=None, test_data_loader=None,
-                 lr_scheduler=None, len_epoch=None):
+                 train_data_loader, valid_data_loader=None, test_data_loader=None,
+                 lr_scheduler=None, len_epoch=None, 
+                 class_weight=None, n_outputs=1, loss_weights=[1], prediction_output='average'):
         super().__init__(model, criterion, metric_fns, optimizer, config)
         self.config = config
-        self.data_loader = data_loader
+        self.train_data_loader = train_data_loader
         if len_epoch is None:
             # epoch-based training
-            self.len_epoch = len(self.data_loader)
+            self.len_epoch = len(self.train_data_loader)
         else:
             # iteration-based training
-            self.data_loader = inf_loop(data_loader)
+            self.train_data_loader = inf_loop(train_data_loader)
             self.len_epoch = len_epoch
 
         self.valid_data_loader = valid_data_loader
         self.test_data_loader = test_data_loader
+        
+        self.class_weight = torch.FloatTensor(class_weight).to(self.device)
+        self.n_outputs = n_outputs
+        self.loss_weights = loss_weights
+        self.prediction_output = prediction_output
 
         self.do_validation = self.valid_data_loader is not None
         self.lr_scheduler = lr_scheduler
-        self.log_step = int(np.sqrt(data_loader.batch_size))
+        self.log_step = int(np.sqrt(train_data_loader.batch_size))
 
         self.train_metrics = MetricTracker('loss', *[m.__name__ for m in self.metric_fns], writer=self.writer)
         self.valid_metrics = MetricTracker('loss', *[m.__name__ for m in self.metric_fns], writer=self.writer)
+
+    def _compute_loss(self, decision_outcomes, target):
+        if self.n_outputs > 1:
+            output = decision_outcomes
+            loss = 0
+            for i, lw in enumerate(self.loss_weights):
+                loss += self.criterion(output[i], target, self.class_weight)
+            return loss
+        else:
+            output = decision_outcomes[-1]
+            return self.criterion(output, target, self.class_weight)
+
+    def _get_prediction_scores(self, decision_outcomes):
+        if self.n_outputs > 1:
+            output = [a.cpu().detach().numpy() for a in decision_outcomes]
+            if self.prediction_output == 'average':
+                prediction_score = np.mean(output, axis=0)
+            else:
+                prediction_score = output[-1]
+        else:
+            prediction_score = decision_outcomes[-1].cpu().detach().numpy()
+        return prediction_score
 
     def _train_epoch(self, epoch):
         """
@@ -42,26 +69,28 @@ class Trainer(BaseTrainer):
         """
         self.model.train()
         self.train_metrics.reset()
-        for batch_idx, (data, target) in enumerate(self.data_loader):
+        for batch_idx, (data, target) in enumerate(self.train_data_loader):
             data, target = data.to(self.device), target.to(self.device)
 
             self.optimizer.zero_grad()
-            output = self.model(data)
-            loss = self.criterion(output, target)
+            outcome, decision_outcomes = self.model(data)
+            loss = self._compute_loss(decision_outcomes=decision_outcomes, target=target)
             loss.backward()
             self.optimizer.step()
 
             self.writer.set_step((epoch - 1) * self.len_epoch + batch_idx)
             self.train_metrics.update('loss', loss.item())
-            for met in self.metric_fns:
-                self.train_metrics.update(met.__name__, met(output, target))
+            with torch.no_grad():
+                y_pred = self._get_prediction_scores(decision_outcomes)
+                y_true = target.cpu().detach().numpy()
+                for met in self.metric_fns:
+                    self.train_metrics.update(met.__name__, met(y_pred, y_true))
 
             if batch_idx % self.log_step == 0:
                 self.logger.debug('Train Epoch: {} {} Loss: {:.6f}'.format(
                     epoch,
                     self._progress(batch_idx),
                     loss.item()))
-                self.writer.add_image('input', make_grid(data.cpu(), nrow=8, normalize=True))
 
             if batch_idx == self.len_epoch:
                 break
@@ -90,14 +119,15 @@ class Trainer(BaseTrainer):
             for batch_idx, (data, target) in enumerate(self.valid_data_loader):
                 data, target = data.to(self.device), target.to(self.device)
 
-                output = self.model(data)
-                loss = self.criterion(output, target)
+                outcome, decision_outcomes = self.model(data)
+                loss = self._compute_loss(decision_outcomes=decision_outcomes, target=target)
 
                 self.writer.set_step((epoch - 1) * len(self.valid_data_loader) + batch_idx, 'valid')
                 self.valid_metrics.update('loss', loss.item())
+                y_pred = self._get_prediction_scores(decision_outcomes)
+                y_true = target.cpu().detach().numpy()
                 for met in self.metric_fns:
-                    self.valid_metrics.update(met.__name__, met(output, target))
-                self.writer.add_image('input', make_grid(data.cpu(), nrow=8, normalize=True))
+                    self.valid_metrics.update(met.__name__, met(y_pred, y_true))
 
         # add histogram of model parameters to the tensorboard
         for name, p in self.model.named_parameters():
@@ -112,13 +142,16 @@ class Trainer(BaseTrainer):
             for batch_idx, (data, target) in enumerate(self.test_data_loader):
                 data, target = data.to(self.device), target.to(self.device)
 
-                output = self.model(data)
-                loss = self.criterion(output, target)
+                outcome, decision_outcomes = self.model(data)
+                loss = self._compute_loss(decision_outcomes=decision_outcomes, target=target)
 
                 batch_size = data.shape[0]
                 total_loss += loss.item() * batch_size
+
+                y_pred = self._get_prediction_scores(decision_outcomes)
+                y_true = target.cpu().detach().numpy()
                 for i, metric in enumerate(self.metric_fns):
-                    total_metrics[i] += metric(output, target) * batch_size
+                    total_metrics[i] += metric(y_pred, y_true) * batch_size
         
         test_output = {'n_samples': len(self.test_data_loader.sampler),
                        'total_loss': total_loss,

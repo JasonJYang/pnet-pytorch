@@ -5,13 +5,12 @@ import numpy as np
 import data_loader.data_loaders as module_data
 import model.loss as module_loss
 import model.metric as module_metric
-import model.model as module_arch
+import model.pnet as module_arch
 from parse_config import ConfigParser
 from trainer import Trainer
 
-
 # fix random seeds for reproducibility
-SEED = 123
+SEED = 42
 torch.manual_seed(SEED)
 torch.cuda.manual_seed(SEED)
 torch.backends.cudnn.deterministic = True
@@ -22,11 +21,17 @@ def main(config):
     logger = config.get_logger('train')
 
     # setup data_loader instances
+    config['data_loader']['args']['logger'] = logger
     data_loader = config.init_obj('data_loader', module_data)
-    valid_data_loader = data_loader.split_dataset(valid=True)
-    test_data_loader = data_loader.split_dataset(test=True)
+    train_data_loader, validate_data_loader, test_data_loader = data_loader.get_dataloader()
+    reactome_network = data_loader.get_reactome()
+    features, genes = data_loader.get_features_genes()
 
     # build model architecture, then print to console
+    config['arch']['args']['features'] = features
+    config['arch']['args']['genes'] = genes
+    config['arch']['args']['reactome_network'] = reactome_network
+    config['arch']['args']['logger'] = logger
     model = config.init_obj('arch', module_arch)
     logger.info(model)
 
@@ -41,10 +46,14 @@ def main(config):
 
     trainer = Trainer(model, criterion, metrics, optimizer,
                       config=config,
-                      data_loader=data_loader,
-                      valid_data_loader=valid_data_loader,
+                      train_data_loader=train_data_loader,
+                      valid_data_loader=validate_data_loader,
                       test_data_loader=test_data_loader,
-                      lr_scheduler=lr_scheduler)
+                      lr_scheduler=lr_scheduler,
+                      class_weight=config['trainer']['class_weight'],
+                      n_outputs=config['trainer']['n_outputs'],
+                      loss_weights=config['trainer']['loss_weights'],
+                      prediction_output=config['trainer']['prediction_output'])
 
     trainer.train()
 
@@ -65,8 +74,7 @@ def main(config):
     log.update({
         met.__name__: test_output['total_metrics'][i].item() / test_output['n_samples'] \
             for i, met in enumerate(test_metrics)})
-    value_format = ''.join(['{:15s}: {:.2f}\t'.format(k, v) for k, v in log.items()])
-    logger.info('    {:15s}: {}'.format('test', value_format))
+    logger.info(log)
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser(description='PyTorch Template')

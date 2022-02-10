@@ -1,33 +1,61 @@
 {
-    "name": "Mnist_LeNet",
+    "name": "PNet-Pytorch",
     "n_gpu": 1,
 
     "arch": {
-        "type": "MnistModel",
-        "args": {}
+        "type": "PNet",
+        "args": {
+            "n_hidden_layers": 5,
+            "direction": "root_to_leaf",
+            "dropout": [0.5, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+            "sparse": true,
+            "add_unk_genes": false,
+            "batch_normal": false,
+            "use_bias": true,
+            "shuffle_genes": false,
+            "attention": false,
+            "sparse_first_layer": true
+        }
     },
     "data_loader": {
-        "type": "MnistDataLoader",
+        "type": "ProstateDataLoader",
         "args":{
-            "data_dir": "data/",
-            "batch_size": 128,
+            "data_type": "prostate_paper",
+            "batch_size": 50,
             "shuffle": true,
-            "validation_split": 0.1,
-            "test_split": 0.2,
-            "num_workers": 2
+            "num_workers": 2,
+            "eval_dataset": false,
+            "pre_params": null,
+            "params": {
+                "data_dir": "data/",
+                "data_type": ["mut_important", "cnv_del", "cnv_amp"],
+                "account_for_data_type": null,
+                "cnv_levels": 3,
+                "cnv_filter_single_event": true,
+                "mut_binary": true,
+                "selected_genes": "tcga_prostate_expressed_genes_and_cancer_genes.csv",
+                "combine_type": "union",
+                "use_coding_genes_only": true,
+                "drop_AR": false,
+                "balanced_data": false,
+                "cnv_split": false,
+                "shuffle": false,
+                "selected_samples": null,
+                "training_split": 0
+            }
         }
     },
     "optimizer": {
         "type": "Adam",
         "args":{
             "lr": 0.001,
-            "weight_decay": 0,
+            "weight_decay": 0.01,
             "amsgrad": true
         }
     },
-    "loss": "nll_loss",
+    "loss": "bce_loss",
     "metrics": [
-        "accuracy", "top_k_acc"
+        "accuracy", "precision", "recall", "roc_auc", "pr_auc", "f1_score"
     ],
     "lr_scheduler": {
         "type": "StepLR",
@@ -37,15 +65,20 @@
         }
     },
     "trainer": {
-        "epochs": 100,
+        "class_weight": [0.75, 1.5],
+        "n_outputs": 6,
+        "loss_weights": [2, 7, 20, 54, 148, 400],
+        "prediction_output": "average",
+
+        "epochs": 300,
 
         "save_dir": "saved/",
-        "save_period": 1,
+        "save_period": 100,
         "verbosity": 2,
         
-        "monitor": "min val_loss",
+        "monitor": "max f1_score",
         "early_stop": 10,
 
-        "tensorboard": true
+        "tensorboard": false
     }
 }

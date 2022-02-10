@@ -1,11 +1,11 @@
-import logging
 import numpy as np
 import pandas as pd
 from os.path import join
 
 class DataUtility():
-    def __init__(self, data_dir):
+    def __init__(self, data_dir, logger):
         self.data_path = data_dir
+        self.logger = logger
         self.processed_path = join(data_dir, 'prostate', 'processed')
         
         self.cached_data = {}
@@ -24,18 +24,18 @@ class DataUtility():
             genes ([set]): the intersection of all the genes in the filename and selected genes
         '''
         filename = join(self.processed_path, filename)
-        logging.info('loading data from %s,' % filename)
+        self.logger.info('loading data from %s,' % filename)
         if filename in self.cached_data:
-            logging.info('loading from memory cached_data')
+            self.logger.info('loading from memory cached_data')
             data = self.cached_data[filename]
         else:
             # TODO data loading 
             data = pd.read_csv(filename, index_col=0)
             self.cached_data[filename] = data
-        logging.info(data.shape)
+        self.logger.info(data.shape)
 
         if 'response' in self.cached_data:
-            logging.info('loading from memory cached_data')
+            self.logger.info('loading from memory cached_data')
             labels = self.cached_data['response']
         else:
             # TODO data loading
@@ -58,11 +58,11 @@ class DataUtility():
             intersect = set.intersection(set(genes), selected_genes)
             if len(intersect) < len(selected_genes):
                 # raise Exception('wrong gene')
-                logging.warning('some genes dont exist in the original data set')
+                self.logger.warning('some genes dont exist in the original data set')
             x = x.loc[:, intersect]
             genes = intersect
-        logging.info('loaded data %d samples, %d variables, %d responses ' % (x.shape[0], x.shape[1], response.shape[0]))
-        logging.info(len(genes))
+        self.logger.info('loaded data %d samples, %d variables, %d responses ' % (x.shape[0], x.shape[1], response.shape[0]))
+        self.logger.info(len(genes))
         return x, response, samples, genes
 
 
@@ -102,7 +102,7 @@ class DataUtility():
         Returns:
             [type]: [description]
         '''
-        logging.info('loading {}'.format(data_type))
+        self.logger.info('loading {}'.format(data_type))
         if data_type == 'TMB':
             '''
             For each sample, the TMB value is as log(1+x), where x is the sum of mutations for each sample
@@ -112,7 +112,7 @@ class DataUtility():
             x, response, info, genes = self.load_data('P1000_final_analysis_set_cross__no_silent_no_introns_not_from_the_paper.csv', 
                                                       selected_genes)
             if mut_binary:
-                logging.info('mut_binary = True')
+                self.logger.info('mut_binary = True')
                 x[x > 1.] = 1.
 
         if data_type == 'mut_important':
@@ -121,7 +121,7 @@ class DataUtility():
             x, response, info, genes = self.load_data('P1000_final_analysis_set_cross_important_only.csv', 
                                                       selected_genes)
             if mut_binary: # True
-                logging.info('mut_binary = True')
+                self.logger.info('mut_binary = True')
                 x[x > 1.] = 1.
 
         if data_type == 'mut_important_plus_hotspots':
@@ -135,7 +135,7 @@ class DataUtility():
             x, response, info, genes = self.load_data('P1000_final_analysis_set_cross_truncating_only.csv', 
                                                       selected_genes)
             if mut_binary:
-                logging.info('mut_binary = True')
+                self.logger.info('mut_binary = True')
                 x[x > 1.] = 1.
 
         if data_type == 'gene_final_no_silent':
@@ -143,7 +143,7 @@ class DataUtility():
         if data_type == 'cnv':
             x, response, info, genes = self.load_data('P1000_data_CNA_paper.csv', selected_genes)
             if cnv_levels == 3:
-                logging.info('cnv_levels = 3')
+                self.logger.info('cnv_levels = 3')
                 # remove single amplification and single delteion, they are usually noisey
                 if cnv_levels == 3:
                     if cnv_filter_single_event: # default True
@@ -218,7 +218,7 @@ class DataUtility():
         return x, response, info, genes
 
     def get_response(self):
-        logging.info('loading response from %s' % 'response_paper.csv')
+        self.logger.info('loading response from %s' % 'response_paper.csv')
         labels = pd.read_csv(join(self.processed_path, 'response_paper.csv'))
         labels = labels.set_index('id')
         return labels
@@ -274,7 +274,7 @@ class DataUtility():
         # cols is the multiindex, which is in the form as 
         cols = all_data.columns
         rows = all_data.index
-        logging.info(
+        self.logger.info(
             'After combining, loaded data %d samples, %d variables, %d responses ' % (x.shape[0], x.shape[1], y.shape[0]))
         return x, y, rows, cols
 
@@ -289,17 +289,18 @@ class DataUtility():
 
 
 class ProstateDataPaper():
-    def __init__(self, data_dir, data_type='mut', account_for_data_type=None, cnv_levels=5,
+    def __init__(self, data_dir, logger, data_type='mut', account_for_data_type=None, cnv_levels=5,
                  cnv_filter_single_event=True, mut_binary=False,
                  selected_genes=None, combine_type='intersection',
                  use_coding_genes_only=False, drop_AR=False,
                  balanced_data=False, cnv_split=False,
                  shuffle=False, selected_samples=None, training_split=0):
         self.data_path = data_dir
+        self.logger = logger
         self.prostate_data_path = join(data_dir, 'prostate')
         self.processed_path = join(data_dir, 'prostate', 'processed')
         self.training_split = training_split
-        data_utility = DataUtility(data_dir=self.data_path)
+        data_utility = DataUtility(data_dir=self.data_path, logger=self.logger)
 
         if selected_genes is not None:
             if type(selected_genes) == list:
@@ -420,6 +421,7 @@ class ProstateDataPaper():
             y = y['response'].values
             x = x.values
 
+        # x, y is in np.array form
         self.x = x
         self.y = y
         self.info = rows
@@ -434,10 +436,9 @@ class ProstateDataPaper():
         y = self.y
         columns = self.columns
         splits_path = join(self.prostate_data_path, 'splits')
-
         training_file = 'training_set_{}.csv'.format(self.training_split)
+        
         training_set = pd.read_csv(join(splits_path, training_file))
-
         validation_set = pd.read_csv(join(splits_path, 'validation_set.csv'))
         testing_set = pd.read_csv(join(splits_path, 'test_set.csv'))
 
@@ -461,4 +462,6 @@ class ProstateDataPaper():
         info_test = info[ind_test]
         info_validate = info[ind_validate]
 
+        # x_train, x_validate, x_test and y_train, y_validate, y_test are in np.array form
+        # info_train, info_validate, info_test are the sample names in each dataset
         return x_train, x_validate, x_test, y_train, y_validate, y_test, info_train.copy(), info_validate, info_test.copy(), columns
