@@ -26,7 +26,7 @@ class Trainer(BaseTrainer):
         self.valid_data_loader = valid_data_loader
         self.test_data_loader = test_data_loader
         
-        self.class_weight = torch.FloatTensor(class_weight).to(self.device)
+        self.class_weight = class_weight
         self.n_outputs = n_outputs
         self.loss_weights = loss_weights
         self.prediction_output = prediction_output
@@ -43,7 +43,7 @@ class Trainer(BaseTrainer):
             output = decision_outcomes
             loss = 0
             for i, lw in enumerate(self.loss_weights):
-                loss += self.criterion(output[i], target, self.class_weight)
+                loss += lw * self.criterion(output[i], target, self.class_weight)
             return loss
         else:
             output = decision_outcomes[-1]
@@ -160,9 +160,9 @@ class Trainer(BaseTrainer):
 
     def _progress(self, batch_idx):
         base = '[{}/{} ({:.0f}%)]'
-        if hasattr(self.data_loader, 'n_samples'):
-            current = batch_idx * self.data_loader.batch_size
-            total = self.data_loader.n_samples
+        if hasattr(self.train_data_loader, 'n_samples'):
+            current = batch_idx * self.train_data_loader.batch_size
+            total = self.train_data_loader.n_samples
         else:
             current = batch_idx
             total = self.len_epoch

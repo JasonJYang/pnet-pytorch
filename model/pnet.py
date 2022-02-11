@@ -112,9 +112,10 @@ class PNetLayer(nn.Module):
             self.attention_activation = nn.Sigmoid()
         
         # testing
-        self.decision_layer = Dense(1, input_shape=(None, n_genes))
+        self.decision_layer = Dense(1, input_shape=(None, n_pathways))
         if batch_normal:
             self.decision_batch_normal = nn.BatchNorm1d(num_features=n_pathways)
+        self.decision_activation = nn.Sigmoid()
         
         self.dropout_layer = nn.Dropout(dropout)
 
@@ -128,6 +129,7 @@ class PNetLayer(nn.Module):
         decision_outcome = self.decision_layer(outcome)
         if self.batch_normal:
             decision_outcome = self.decision_batch_normal(decision_outcome)
+        decision_outcome = self.decision_activation(decision_outcome)
         
         outcome = self.dropout_layer(outcome)
     
