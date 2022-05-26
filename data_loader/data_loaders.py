@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 from os.path import join
 from prostate_cancer.data_reader import ProstateDataPaper
 from pre import get_processor
-from reactome.Reactome import ReactomeNetwork
+from reactome.reactome import ReactomeNetwork
 
 class ProstateDataLoader():
     def __init__(self, data_type, params, batch_size, shuffle, num_workers, logger,
@@ -57,7 +57,7 @@ class ProstateDataLoader():
         if hasattr(columns, 'levels'):
             genes = columns.levels[0]
         else:
-            genes = cols
+            genes = columns
         return features, genes
 
     def get_dataloader(self):
