@@ -38,6 +38,7 @@ class P1000():
         id_col = 'Tumor_Sample_Barcode'
         df = pd.read_csv(join(self.data_dir, filename), sep='\t', low_memory=False, skiprows=1)
         print('mutation distribution')
+        # there are multiple variant classifications
         print(df['Variant_Classification'].value_counts())
 
         if self.filter_silent_muts:
