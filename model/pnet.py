@@ -29,7 +29,6 @@ class Diagonal(nn.Module):
 
     def forward(self, x):
         # x: [row, genes*3]
-        print('input dimensions {}'.format(x.shape))
         mult = x * self.kernel # [row, genes*3]
         mult = torch.reshape(mult, (-1, self.n_inputs_per_node)) # [row*genes, 3]
         mult = torch.sum(mult, dim=1) # [row*genes]
@@ -114,7 +113,7 @@ class PNetLayer(nn.Module):
         # testing
         self.decision_layer = Dense(1, input_shape=(None, n_pathways))
         if batch_normal:
-            self.decision_batch_normal = nn.BatchNorm1d(num_features=n_pathways)
+            self.decision_batch_normal = nn.BatchNorm1d(num_features=1)
         self.decision_activation = nn.Sigmoid()
         
         self.dropout_layer = nn.Dropout(dropout)
@@ -180,7 +179,7 @@ class PNet(nn.Module):
 
         # testing
         self.decision_layer1 = nn.Linear(in_features=n_genes, out_features=1)
-        self.batchnorm_layer1 = nn.BatchNorm1d(num_features=n_genes)
+        self.batchnorm_layer1 = nn.BatchNorm1d(num_features=1)
         self.decision_activation1 = nn.Sigmoid()
 
         module_list = []

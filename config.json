@@ -10,7 +10,7 @@
             "dropout": [0.5, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
             "sparse": true,
             "add_unk_genes": false,
-            "batch_normal": false,
+            "batch_normal": true,
             "use_bias": true,
             "shuffle_genes": false,
             "attention": false,
@@ -21,7 +21,7 @@
         "type": "ProstateDataLoader",
         "args":{
             "data_type": "prostate_paper",
-            "batch_size": 50,
+            "batch_size": 128,
             "shuffle": true,
             "num_workers": 2,
             "eval_dataset": false,
